@@ -17,7 +17,7 @@ const scelta=document.getElementById('scelta')
 let valore=parseInt(scelta.value)
 // creo un array vuoto
 let arrayBombe=[ ]
- 
+let punteggio=0
 // creo l'evento
 btnPlayHtml.addEventListener('click', function(){
     // associo il valore della scelta utente ad un 
@@ -48,17 +48,16 @@ btnPlayHtml.addEventListener('click', function(){
         grigliaHtml.appendChild(divBox)
         divBox.addEventListener('click', function(){
             let span=this.querySelector('span')
-            let punteggio=0
             if (arrayBombe.includes(i)){
                 divBox.classList.add("red")
                 alert(`hai preso una bomba,hai totatlizzato un punteggio di: ${punteggio}`)
-                reset
+                reset()
             }else if(!(arrayBombe.includes(i))){
                 divBox.classList.add("active")
                 punteggio++
-            }else if(i-arrayBombe===0){
+            }else if(punteggio===valore-arrayBombe.lenght){
                 alert(`bravo hai completato il livello totalizzando un punteggio di: ${punteggio}`)
-                reset
+                reset()
             }
             
         })
@@ -93,7 +92,7 @@ function nuovoArray(){
 }
 // funzione per il reset
 function reset(){
-    divBox.classList.remove("active","red")
+    grigliaHtml.innerHTML=""
     arrayBombe=[ ]
     punteggio=0
 }
