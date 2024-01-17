@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    justify-content: space-between;
+    padding: 1rem;
+    height: 10vh;
+}
+main{
+    background-color: aqua;
+    height:85vh;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    height: 5vh;
+    padding: 10px;
+}
+.vh-100{
+    height: 100vh;
+}
+.d-flex{
+    display: flex;
+}
+.align-self-center{
+    align-self: center;
+}
+.btn{
+    padding-inline: 20px;
+}
+#griglia{
+    width:500px;
+    height: 500px;
+    flex-wrap: wrap;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+.active{
+    color: yellow;
+    background-color: blue;
+}
+.d-none{
+    display: none;
+}
+.red{
+    background-color: red;
+    color:gold;
+}
